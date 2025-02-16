@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        body{
+            background: url(../image/chun.jpg) no-repeat;
+            background-size: cover;
+        }
+        .box{
+            width: 500px;
+            height: 300px;
+            margin: 0 auto;
+            margin-top: 100px;
+            background-color: #fff;
+        }
+        #myCanvas{
+            border: 1px solid gray;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <canvas width="500" height="300" id="myCanvas"></canvas>
+    </div>
+    <script>
+        var myCanvas=document.getElementById("myCanvas");
+        var context=myCanvas.getContext("2d");
+        var circleArr=[];
+        // 随机生成颜色
+        function generateColor(){
+            var str = "0123456789abcdef";
+            var newStr = "#";
+            for (var i = 0; i < 6; i++) {
+                newStr += str.charAt(Math.floor((Math.random() * 10 + 6)));
+            }
+            return newStr;
+        }
+        // 创建圆对象
+        function Circle(x,y,r,color){
+            this.x=x;
+            this.y=y;
+            this.r=r;
+            console.log(this.x,this.y,this.r,this.color)
+            this.color=color;
+            this.dx=Math.floor((Math.random() * 12)-5);
+            this.dy=Math.floor((Math.random() * 12)-5);
+            // 放在数组里
+            circleArr.push(this);
+        }
+        // 画圆
+        Circle.prototype.generateCircle=function(){
+            context.beginPath();
+            context.arc(this.x, this.y, this.r, Math.PI / 180 * 0, Math.PI / 180 * 360, false);
+            context.fillStyle=this.color;
+            context.fill();
+        }
+        // 圆随机方向移动并缩小至消失
+        Circle.prototype.moveScale=function(){
+            this.x+=this.dx;
+            this.y+=this.dy;
+            this.r--;
+            if(this.r < 0){
+                for (var i = 0; i < circleArr.length; i++) {
+                    if (circleArr[i] === this) {
+                        circleArr.splice(i,1);
+                    };
+                }
+                return false;
+            }
+            return true;
+        }
+        
+        var setTimeoutId=null;
+        setInterval(function(){
+            context.clearRect(0, 0, 1000, 600)
+            for (var i = 0; i < circleArr.length; i++) {
+                circleArr[i].moveScale() && circleArr[i].generateCircle();
+            };
+         },20);
+
+        myCanvas.onmousemove=function(e){
+            var circle=new Circle(e.offsetX,e.offsetY,20,generateColor());
+            console.log(e)
+        }
+    </script>
+</body>
+</html>

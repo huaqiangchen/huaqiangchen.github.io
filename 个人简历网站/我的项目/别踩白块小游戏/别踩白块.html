@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./jquery.min.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        li {
+            list-style: none;
+        }
+
+        .top-box {
+            width: 270px;
+            height: 40px;
+            margin: 50px auto;
+        }
+
+        input {
+            outline: none;
+            display: block;
+        }
+
+        .box {
+            width: 268px;
+            height: 268px;
+            margin: 0 auto;
+            border: 2px solid #8f8fff;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .box ul {
+            width: 270px;
+            height: 268px;
+            display: flex;
+            flex-wrap: wrap;
+            position: absolute;
+            left: 0;
+            top: -335px;
+        }
+
+        .box ul span {
+            width: 270px;
+            height: 67px;
+            display: flex;
+        }
+
+
+        .box ul li {
+            width: 65px;
+            height: 65px;
+            border: 1px solid black;
+        }
+
+        .box ul li.active {
+            background-color: black;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="top-box">分数:<input type="text" readonly></div>
+    <div class="box">
+        <ul>
+            <span>
+                <li class="active"></li>
+                <li></li>
+                <li></li>
+                <li></li>
+            </span>
+            <span>
+                <li></li>
+                <li class="active"></li>
+                <li></li>
+                <li></li>
+            </span>
+            <span>
+                <li></li>
+                <li></li>
+                <li class="active"></li>
+                <li></li>
+            </span>
+            <span>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li class="active"></li>
+            </span>
+            <span>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li class="active"></li>
+            </span>
+        </ul>
+        <script>
+            $(document).ready(function () {
+                var ul = $(".box ul");
+                var input=$("input")[0];
+                var score = 0;
+                input.value=score;
+
+                var isGameOver = false;
+                var speed = 1;
+                var setIntervalID = setInterval(() => {
+                    if (parseInt(ul.css("top")) > -67) {
+                        if (ul.children().last().hasClass("white")) {
+
+                        } else {
+                            alert("黑块触底了,游戏结束!!")
+                            clearInterval(setIntervalID);
+                            isGameOver = true;
+                        }
+                    }
+                    if (parseInt(ul.css("top")) >= 0) {
+                        var str = "";
+                        var random = Math.floor(Math.random() * 4);
+                        var span = document.createElement("span")
+                        if (random == 0) {
+                            str += '<li class="active"></li><li></li><li></li><li></li>';
+                        } else if (random == 1) {
+                            str += '<li></li><li class="active"></li><li></li><li></li>';
+                        } else if (random == 2) {
+                            str += '<li></li><li></li><li class="active"></li><li></li>';
+                        } else {
+                            str += '<li></li><li></li><li></li><li class="active"></li>';
+                        }
+                        span.innerHTML = str;
+                        ul.prepend(span);
+                        ul.css("top", "-67px")
+                        ul.children().last().remove();
+                    }
+                    ul.css("top", parseInt(ul.css("top")) + speed + "px");
+                }, 20);
+                ul.click(function (e) {
+                    if (isGameOver) {
+                        alert("游戏结束!!");
+                    }else{
+                        // console.log(e.target.classList.contains("active"))
+                        if (e.target.classList.contains("active")) {
+                            score++;
+                            if(score%5==0){
+                                speed+=0.5;
+                            }
+                            input.value=score;
+                            e.target.classList.remove("active");
+                            e.target.parentNode.classList.add("white");
+                        } else {
+                            alert("点到白块了,游戏结束!!");
+                            clearInterval(setIntervalID);
+                            isGameOver = true;
+                        }
+                    }
+                })
+            })
+
+        </script>
+    </div>
+</body>
+
+</html>

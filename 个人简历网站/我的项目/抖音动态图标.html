@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .douyin {
+            width: 300px;
+            height: 344px;
+            margin: 0 auto;
+            margin-top: 100px;
+            border-radius: 25%;
+            padding: 20px calc(20px + 300px / 0.87 * 0.13 / 2);
+            background-color: #000;
+            display: grid;
+        }
+
+        .douyin::before {
+            --color: #08fff9;
+            transform: translate(calc(var(--x, 0%) - 3%), calc(var(--x, 0%) - 3%));
+        }
+
+        .douyin::after {
+            --color: #f00044;
+            transform: translate(calc(3% - var(--x, 0%)), calc(3% - var(--x, 0%)));
+            mix-blend-mode: lighten;
+        }
+
+        .douyin::before,
+        .douyin::after {
+            content: '';
+            grid-area: 1/1;
+            background: radial-gradient(100% 100% at 100% 100%,
+                    transparent 0 50%,
+                    var(--color) 50% 100%, transparent) 0% 52%/40% 36% no-repeat,
+                radial-gradient(50% 100% at top,
+                    transparent 44%,
+                    var(--color) 45% 98%,
+                    transparent) 0% 100%/73% 31% no-repeat,
+                linear-gradient(var(--color), var(--color)) 66% 0/20% 70% no-repeat,
+                radial-gradient(100% 100% at 100% 0,
+                    transparent 0 58%,
+                    var(--color) 58.5% 99%,
+                    transparent) 100% 0/47% 41.8% no-repeat;
+        }
+
+        .douyin:hover::before,
+        .douyin:hover::after {
+            --x: 0.1%;
+            transition: transform cubic-bezier(.5, 300, .5, -150) .3s;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="douyin"></div>
+
+
+
+</body>
+
+</html>

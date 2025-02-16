@@ -1,0 +1,1429 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>低仿哔哩哔哩</title>
+    <link rel="stylesheet" href="./CSS文件/base.css">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <style>
+        .nav {
+            width: 1349px;
+            margin: 0 auto;
+        }
+
+        .nav .nav-top {
+            height: 155px;
+            background-size: cover;
+            background-position: -154px 0;
+            background-repeat: no-repeat;
+            background-image: url(./imges/1.png);
+            position: relative;
+        }
+* 
+            width: 1280px;
+            height: 64px;
+            margin: 0 auto;
+        }
+
+        .nav .nav-top .bili {
+            width: 180px;
+            height: 77.5px;
+            position: absolute;
+            left: 66px;
+            top: 66px;
+        }
+
+        .nav .nav-top .nav-top-bar .left-entry {
+            width: 487px;
+            height: 64px;
+        }
+
+        .nav>.nav-top>.nav-top-bar>.left-entry>a,
+        .nav>.nav-top>.nav-top-bar>.left-entry>.v-popover-wrap>a {
+            height: 64px;
+            line-height: 64px;
+            margin-right: 10px;
+            display: inline-block;
+        }
+
+        @keyframes jump {
+            0% {
+                transform: translateY(0)
+            }
+
+            50% {
+                transform: translateY(-3px)
+            }
+
+            to {
+                transform: translateY(0)
+            }
+        }
+
+        .nav>.nav-top>.nav-top-bar>.left-entry>.v-popover-wrap>a:hover {
+            animation: jump .3s;
+        }
+
+        .nav .nav-top .nav-top-bar .left-entry a:hover span {
+            color: #2fbdef;
+        }
+
+        .nav>.nav-top>.nav-top-bar>.left-entry>li>a>span {
+            color: white;
+        }
+
+        .nav>.nav-top>.nav-top-bar>.left-entry>li>.home>.home-img,
+        .nav>.nav-top>.nav-top-bar>.left-entry>li>.download>.download-img {
+            background-color: white;
+            margin-top: 24px;
+            float: left;
+            margin-right: 5px;
+        }
+
+        .nav .nav-top .nav-top-bar .center-search__bar {
+            width: 351px;
+            height: 38px;
+            line-height: 38px;
+            margin-top: 13px;
+            border-radius: 2%;
+            background-color: #dadbe1;
+        }
+
+        .nav .nav-top .nav-top-bar .center-search__bar .nav-search-input {
+            width: 298px;
+            height: 20px;
+            padding: 5px;
+            margin-top: 3px;
+            margin-left: 5px;
+            background-color: #dadbe1;
+            border: 1px solid transparent;
+            float: left;
+        }
+
+        .nav .nav-top .nav-top-bar .center-search__bar img {
+            margin-top: 6px;
+            margin-left: 5px;
+            padding: 5px;
+            float: left;
+        }
+
+        .nav .nav-top .nav-top-bar .right-entry .login img {
+            width: 36px;
+            height: 36px;
+            margin-top: 13px;
+            margin-left: 20px;
+            border-radius: 50%;
+            border: 1px solid transparent;
+        }
+
+        .nav .nav-top .nav-top-bar .right-entry .v-popover-wrap {
+            width: 28px;
+            margin-top: 15px;
+            margin-left: 10px;
+            position: relative;
+        }
+
+        .nav .nav-top .nav-top-bar .right-entry a .right-entry--img {
+            display: inline-block;
+        }
+
+        .nav .nav-top .nav-top-bar .right-entry a .right-entry--img:hover {
+            animation: jump .3s;
+        }
+
+        .nav .nav-top .nav-top-bar .right-entry .right-entry--vip {
+            width: 42px;
+            margin-top: 15px;
+            margin-left: 10px;
+        }
+
+        .nav .nav-top .nav-top-bar .right-entry .right-entry--item {
+            width: 56px;
+            margin-top: 15px;
+            margin-left: 10px;
+        }
+
+        .nav .nav-top .nav-top-bar .right-entry .v-popover-wrap img {
+            margin-left: 4px;
+        }
+
+        .nav .nav-top .nav-top-bar .right-entry .right-entry--vip img {
+            margin-left: 11px;
+        }
+
+        .nav .nav-top .nav-top-bar .right-entry .right-entry--item img {
+            margin-left: 18px;
+        }
+
+        .nav .nav-top .nav-top-bar .right-entry .v-popover-wrap span,
+        .nav .nav-top .nav-top-bar .right-entry .right-entry--vip span,
+        .nav .nav-top .nav-top-bar .right-entry .right-entry--item span {
+            color: white;
+            display: inline-block;
+            text-align: center;
+        }
+
+        .nav .nav-bottom {
+            height: 100px;
+        }
+
+        .nav .nav-bottom .channel-icons {
+            width: 168px;
+            height: 64px;
+            margin-top: 16px;
+        }
+
+        .nav .nav-bottom .channel-icons__item {
+            margin-right: 16px;
+        }
+
+        .nav .nav-bottom .channel-icons__item .icon-title {
+            width: 40px;
+            display: inline-block;
+            text-align: center;
+        }
+
+        .nav .nav-bottom .right-channel-container {
+            margin-top: 16px;
+
+        }
+
+        .nav .nav-bottom .right-channel-container .channel-items__left {
+            width: 778px;
+            height: 66px;
+            display: flex;
+            padding-right: 5px;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            flex-direction: column;
+            border-right: 1px solid #e3e5e7;
+        }
+
+        .nav .nav-bottom .right-channel-container .channel-items__left .channel-link {
+            width: 77.22px;
+            height: 26px;
+            line-height: 26px;
+            text-align: center;
+            display: inline-block;
+            border-radius: 6px;
+            background-color: #f6f7f8;
+            font-size: 13px;
+            position: relative;
+
+        }
+
+        .nav .nav-bottom .right-channel-container .channel-items__left .channel-link:hover {
+            background-color: #e1e3e5;
+        }
+
+        .nav .nav-bottom .right-channel-container .channel-items__right {
+            width: 200px;
+            height: 71px;
+            display: flex;
+            padding: 5px 10px;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+
+        .nav .nav-bottom .right-channel-container .channel-items__right .channel-link-right {
+            height: 28px;
+            line-height: 28px;
+            text-align: center;
+            display: inline-block;
+            font-size: 13px;
+
+        }
+
+        .nav .nav-bottom .right-channel-container .channel-items__right .channel-link-right:nth-of-type(3-n) {
+            margin-bottom: 10px;
+        }
+
+        .nav .nav-bottom .right-channel-container .channel-items__right a:hover {
+            color: #00aeec;
+        }
+    </style>
+</head>
+
+<body>
+    <style>
+        .box-big-one {
+            width: 100%;
+            z-index: 999;
+            position: relative;
+            background-color: white;
+        }
+
+        .box-big {
+            position: relative;
+            margin: 0 auto;
+            max-width: 2560px;
+            width: 100%;
+
+        }
+
+        .top---top {
+            width: 100%;
+            height: 50px;
+            background-color: #00aeec;
+            position: sticky;
+            top: 0;
+            margin: 0 auto;
+            z-index: 1002;
+        }
+
+        .top---top2 {
+            width: 100%;
+            height: 50px;
+            background-color: pink;
+            position: sticky;
+            top: 50px;
+            margin: 0 auto;
+            z-index: 998;
+        }
+    </style>
+    <!-- <div class="top---top">
+
+</div>
+<div class="top---top2"> -->
+
+    </div>
+    <div class="box-big">
+
+        <div class="nav">
+            <!-- <div class="box-big-one"> -->
+
+            <!-- </div> -->
+
+            <div class="nav-top">
+                <div class="nav-top-bar">
+                    <ul class="left-entry fl">
+                        <li class="v-popover-wrap">
+                            <a href="./仿哔哩哔哩官网.html" class="home">
+                                <img src="./imges/21.png" class="home-img" /><span>首页</span>
+                            </a>
+                        </li>
+                        <li class="v-popover-wrap">
+                            <a href="https://www.bilibili.com/anime/?spm_id_from=333.1007.0.0"
+                                target="_blank"><span>番剧</span></a>
+                        </li>
+                        <li class="v-popover-wrap">
+                            <a href="https://live.bilibili.com/?spm_id_from=333.1007.0.0" target="_blank"
+                                class="default-entry"><span>直播</span></a>
+                            <style>
+                                .v-popover-content {
+                                    height: 273px;
+                                    width: 498px;
+                                    display: none;
+                                    background-color: white;
+                                    border-radius: 5%;
+                                    border: 1px solid #e3e5e7;
+                                    position: absolute;
+                                    left: 10px;
+                                    top: 60px;
+                                    z-index: 1001;
+                                }
+
+                                .live {
+                                    height: 275px;
+                                    width: 500px;
+                                    display: flex;
+                                }
+
+                                .title {
+                                    width: 230px;
+                                    font-size: 20px;
+                                    padding: 10px;
+                                }
+
+                                .live-left {
+                                    height: 250px;
+                                }
+
+                                .live-right {
+                                    width: 250px;
+                                }
+
+                                .live-left-list {
+                                    display: flex;
+                                    flex-wrap: wrap;
+                                    justify-content: space-between;
+                                    width: 220px;
+                                    height: 195px;
+                                    padding-left: 20px;
+                                    padding-right: 20px;
+                                    margin-bottom: 30px;
+                                    border-right: 2px solid #e3e5e7;
+                                }
+
+                                .live-left-list .live-left-list-item {
+                                    width: 68px;
+                                }
+
+                                .live-left-list .live-left-list-item-img {
+                                    width: 68px;
+                                    height: 68px;
+                                    border-radius: 50%;
+                                }
+
+                                .live-left-list-item-text {
+                                    color: black;
+                                    width: 68px;
+                                    display: inline-block;
+                                    text-align: center;
+                                    font-size: 12px;
+                                }
+
+                                .live-right-list {
+                                    height: 198px;
+                                    display: flex;
+                                    margin-left: 15px;
+                                    flex-direction: column;
+                                    justify-content: space-between;
+                                }
+
+                                .live-right-list .live-right-list-item-img {
+                                    border-radius: 5%;
+                                }
+
+                                .nav .nav-top .nav-top-bar .right-entry .v-popover-wrap:hover .down,
+                                .nav .nav-top .nav-top-bar .right-entry .right-entry--vip:hover .vip,
+                                .nav .nav-top .nav-top-bar .left-entry .v-popover-wrap:hover .load,
+                                .nav .nav-top .nav-top-bar .left-entry .v-popover-wrap:hover .v-popover-content {
+                                    display: block;
+                                }
+
+                                .load {
+                                    position: absolute;
+                                    left: 260px;
+                                    top: 60px;
+                                    z-index: 1;
+                                    display: none;
+                                    z-index: 1001;
+                                }
+
+                                .vip {
+                                    position: absolute;
+                                    left: 55%;
+                                    top: 70px;
+                                    z-index: 1;
+                                    display: none;
+                                    z-index: 1001;
+                                }
+
+                                .down {
+                                    background: white;
+                                    width: 144px;
+                                    height: 219px;
+                                    padding: 15px 0;
+                                    line-height: 1;
+                                    border-radius: 5%;
+                                    text-align: center;
+                                    position: absolute;
+                                    left: -50px;
+                                    top: 39px;
+                                    display: none;
+                                    z-index: 1001;
+                                }
+
+                                .down a {
+                                    width: 114px;
+                                    padding: 15px;
+                                    display: inline-block;
+
+                                }
+
+                                .down a:hover {
+                                    background-color: #e3e5e7;
+                                }
+                            </style>
+                            <div class="v-popover-content left-entry-popover">
+                                <div class="live">
+                                    <div class="live-left">
+                                        <div class="live-left-title title">热门直播：</div>
+                                        <div class="live-left-list"><a target="_blank" class="live-left-list-item"
+                                                href="https://live.bilibili.com/25225998">
+                                                <img src="./imges/51.jpg" class="live-left-list-item-img" />
+                                                <span class="live-left-list-item-text">樱桃软喵..</span>
+                                            </a><a target="_blank" class="live-left-list-item"
+                                                href="https://live.bilibili.com/25888446">
+                                                <img src="./imges/52.png" class="live-left-list-item-img" />
+
+                                                <span class="live-left-list-item-text">安眠星人</span>
+                                            </a><a target="_blank" class="live-left-list-item"
+                                                href="https://live.bilibili.com/25965542">
+                                                <img src="./imges/53.jpg" class="live-left-list-item-img" />
+                                                <span class="live-left-list-item-text">心上瑶</span>
+                                            </a><a target="_blank" class="live-left-list-item"
+                                                href="https://live.bilibili.com/24687682">
+                                                <img src="./imges/54.jpg" class="live-left-list-item-img" />
+                                                <span class="live-left-list-item-text">于大爷讲..</span>
+                                            </a><a target="_blank" class="live-left-list-item"
+                                                href="https://live.bilibili.com/25667705">
+                                                <img src="./imges/55.jpg" class="live-left-list-item-img" />
+                                                <span class="live-left-list-item-text">助眠治愈..</span>
+                                            </a><a target="_blank" class="live-left-list-item"
+                                                href="https://live.bilibili.com/3134449">
+                                                <img src="./imges/56.jpg" class="live-left-list-item-img" />
+                                                <span class="live-left-list-item-text">anshen..</span>
+                                            </a></div>
+                                    </div>
+                                    <div class="live-right">
+                                        <div class="live-right-title title">热门活动：</div>
+                                        <div class="live-right-list"><a class="live-right-list-item"
+                                                href="https://www.bilibili.com/blackboard/live/activity-1UCZ01Jl9Y.html"
+                                                target="_blank">
+                                                <div class="live-right-list-item-img">
+                                                    <img src="./imges/57.jpg" />
+                                                </div>
+                                            </a><a class="live-right-list-item"
+                                                href="https://live.bilibili.com/blackboard/activity-6PLNoH61Yg.html"
+                                                target="_blank">
+                                                <div class="live-right-list-item-img">
+                                                    <img src="./imges/58.jpg" />
+                                                </div>
+                                            </a></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+
+                        <li class="v-popover-wrap">
+                            <a href="https://game.bilibili.com/platform/?spm_id_from=333.1007.0.0"
+                                target="_blank"><span>游戏中心</span></a>
+                        </li>
+
+                        <li class="v-popover-wrap">
+                            <a href="https://show.bilibili.com/platform/home.html?msource=pc_web&spm_id_from=333.1007.0.0"
+                                target="_blank"><span>会员购</span></a>
+
+                        </li>
+
+                        <li class="v-popover-wrap">
+                            <a href="https://manga.bilibili.com/?from=bill_top_mnav&spm_id_from=333.1007.0.0"
+                                target="_blank"><span>漫画</span></a>
+                        </li>
+
+                        <li class="v-popover-wrap">
+                            <a href="https://www.bilibili.com/match/home/?spm_id_from=333.1007.0.0" target="_blank"
+                                class="default-entry"><span>赛事</span></a>
+
+                        </li>
+
+                        <li class="v-popover-wrap left-loc-entry">
+                            <a class="loc-entry " href="https://www.bilibili.com/kuawan/2022nye/pc" target="_blank">
+                                <span>跨晚</span>
+                            </a>
+
+                        </li>
+
+                        <li class="v-popover-wrap">
+                            <a href="https://app.bilibili.com/?spm_id_from=333.1007.0.0" target="_blank"
+                                class="download"><img src="./imges/3.png" class="download-img" /><span>下载客户端</span>
+                            </a>
+                            <div class="load">
+                                <img src="./imges/61.jpg" />
+                            </div>
+                        </li>
+                    </ul>
+
+                    <div class="center-search__bar fl">
+                        <input class="nav-search-input" type="text" value="" placeholder="李洪绸">
+                        <img src="./imges/4.png" />
+                    </div>
+
+                    <ul class="right-entry">
+                        <li class="login">
+                            <img src="./imges/20.jpg" />
+                        </li>
+                        <li class="right-entry--vip"><a href="javasript:void(0)" target="_blank">
+                                <div class="right-entry--img"><img src="./imges/5.jpg" /></div>
+                                <span class="right-entry-text">大会员</span>
+                            </a>
+                            <div class="vip">
+                                <img src="./imges/62.jpg" />
+                            </div>
+                        </li>
+
+                        <li class="v-popover-wrap">
+                            <a class="right-entry__outside" href="javasript:void(0)" target="_blank">
+                                <div class="right-entry--img"><img src="./imges/6.jpg" /></div>
+                                <span class="right-entry-text">消息</span>
+                            </a>
+                            <ul class="down">
+                                <li><a href="#">回复我的</a></li>
+                                <li><a href="#">@我的</a></li>
+                                <li><a href="#">收到的赞</a></li>
+                                <li><a href="#">系统的消息</a></li>
+                                <li><a href="#">我的消息</a></li>
+                            </ul>
+                        </li>
+
+                        <li class="v-popover-wrap">
+                            <a href="javasript:void(0)" target="_blank" class="right-entry__outside">
+                                <div class="right-entry--img"><img src="./imges/7.jpg" /></div>
+                                <span class="right-entry-text">动态</span>
+                            </a>
+
+                        </li>
+                        <li class="v-popover-wrap"><a class="right-entry__outside" data-header-fav-entry=""
+                                href="javasript:void(0)" target="_blank">
+                                <div class="right-entry--img"><img src="./imges/8.jpg" /></div>
+                                <span class="right-entry-text">收藏</span>
+                            </a>
+                        </li>
+                        <li class="v-popover-wrap"><a href="javasript:void(0)" target="_blank"
+                                class="right-entry__outside">
+                                <div class="right-entry--img"><img src="./imges/9.jpg" /></div>
+                                <span class="right-entry-text">历史</span>
+                            </a>
+
+                        </li>
+                        <li class="right-entry--item"><a href="javasript:void(0)" target="_blank">
+                                <div class="right-entry--img"><img src="./imges/10.jpg" /></div><span
+                                    class="right-entry-text">创作中心</span>
+                            </a></li>
+                        <li class="right-entry--item"><a href="javasript:void(0)" target="_blank">
+                                <img src="./imges/19.jpg" />
+                        </li>
+                        </li>
+                    </ul>
+
+                </div>
+                <img src="./imges/2.png" class="bili" />
+            </div>
+            <div class="box-big-one">
+                <div class="nav-bottom contianer">
+                    <div class="channel-icons fl">
+                        <a class="channel-icons__item fl" href="https://t.bilibili.com/?spm_id_from=333.1007.0.0"
+                            target="_blank">
+                            <div class="icon-bg icon-bg__dynamic">
+                                <img src="./imges/22.jpg" />
+                            </div><span class="icon-title">动态</span>
+                        </a>
+                        <a href="https://www.bilibili.com/v/channel/?spm_id_from=333.1007.0.0" target="_blank"
+                            class="channel-icons__item fl">
+                            <div class="icon-bg icon-bg__popular"><img src="./imges/23.jpg" /></div><span
+                                class="icon-title">热门</span>
+                        </a>
+                        <a class="channel-icons__item fl"
+                            href="https://www.bilibili.com/v/channel/?spm_id_from=333.1007.0.0" target="_blank">
+                            <div class="icon-bg icon-bg__channel"><img src="./imges/24.jpg" /></div>
+                            <!---->
+                            <!----><span class="icon-title">频道</span>
+                        </a>
+                    </div>
+                    <style>
+                        .same {
+                            display: flex;
+                            flex-wrap: wrap;
+                            justify-content: space-between;
+                            border-radius: 6px;
+                            border: 1px solid gray;
+                            padding: 5px;
+                            background-color: white;
+                            display: none;
+                        }
+
+                        .fanju {
+                            width: 175px;
+                            position: absolute;
+                            top: -156px;
+                            left: -54px;
+                        }
+
+                        .guochuang,
+                        .donghua {
+                            width: 215px;
+                            position: absolute;
+                            top: -156px;
+                            left: -80px;
+                        }
+
+                        .guicu {
+                            width: 230px;
+                            position: absolute;
+                            top: -156px;
+                            left: -90px;
+                        }
+
+                        .yingshi {
+                            width: 80px;
+                            position: absolute;
+                            left: -7px;
+                        }
+
+                        .zix {
+                            width: 45px;
+                            position: absolute;
+                            left: 10px;
+                        }
+
+                        .zixun {
+                            display: flex;
+                            flex-direction: column;
+                            justify-content: space-between;
+                        }
+
+                        .nav .nav-bottom .right-channel-container .channel-items__left .channel-link:hover .same {
+                            display: block;
+                        }
+
+                        .nav .nav-bottom .right-channel-container .channel-items__left .channel-link .same span {
+                            height: 16px;
+                            line-height: 16px;
+                            text-align: left;
+                            display: inline-block;
+                            margin: 5px;
+                            padding: 5px;
+                            color: black;
+                            border-radius: 6px;
+                            background-color: white;
+                            font-size: 13px;
+                        }
+
+                        .nav .nav-bottom .right-channel-container .channel-items__left .channel-link .fanju span {
+                            width: 67px;
+
+                        }
+
+                        .nav .nav-bottom .right-channel-container .channel-items__left .channel-link .guochuang span,
+                        .nav .nav-bottom .right-channel-container .channel-items__left .channel-link .donghua span {
+                            width: 85px;
+                        }
+
+                        .nav .nav-bottom .right-channel-container .channel-items__left .channel-link .guicu span {
+                            width: 95px;
+                        }
+
+                        .nav .nav-bottom .right-channel-container .channel-items__left .channel-link .yingshi span {
+                            width: 60px;
+                        }
+
+                        .nav .nav-bottom .right-channel-container .channel-items__left .channel-link .zix span {
+                            width: 26px;
+                        }
+
+                        .nav .nav-bottom .right-channel-container .channel-items__left .channel-link .same span:hover {
+                            background-color: #e1e3e5;
+                        }
+
+                        .nav .nav-bottom .right-channel-container .channel-items__left .channel-link:hover {
+                            background-color: #e1e3e5;
+                        }
+                    </style>
+                    <div class="right-channel-container fl">
+                        <div class="channel-items__left fl">
+                            <!--[-->
+                            <div class="channel-link"><a class=""
+                                    href="https://www.bilibili.com/anime/?spm_id_from=333.1007.0.0"
+                                    style="letter-spacing:2px;" target="_blank">番剧</a>
+                                <div class="fanju same">
+                                    <span>连载动画</span><span>新番时间表</span><span>完结动画</span><span>番剧索引</span>
+                                    <div class="zixun"><span>资讯</span><span>官方延伸</span></div>
+                                </div>
+                            </div>
+                            <div class="channel-link"><a class=""
+                                    href="https://www.bilibili.com/movie/?spm_id_from=333.1007.0.0"
+                                    style="letter-spacing:2px;" target="_blank">电影</a>
+                            </div>
+                            <div class="channel-link"><a class=""
+                                    href="https://www.bilibili.com/guochuang/?spm_id_from=333.1007.0.0"
+                                    style="letter-spacing:2px;" target="_blank">国创</a>
+                                <div class="guochuang same">
+                                    <span>国产动画</span><span>资讯</span><span>国产原创相关</span><span>新番时间表</span><span>布袋戏</span><span>国产动画索引</span><span
+                                        class="fl">动态漫·广播剧</span>
+                                </div>
+                            </div>
+                            <div class="channel-link">
+                                <a class="" href="https://www.bilibili.com/tv/?spm_id_from=333.1007.0.0"
+                                    style="letter-spacing:2px;" target="_blank">电视剧</a>
+                            </div>
+                            <div class="channel-link"><a class=""
+                                    href="https://www.bilibili.com/variety/?spm_id_from=333.1007.0.0"
+                                    style="letter-spacing:2px;" target="_blank">综艺</a>
+                            </div>
+                            <div class="channel-link"><a class=""
+                                    href="https://www.bilibili.com/documentary/?spm_id_from=333.1007.0.0"
+                                    style="letter-spacing:2px;" target="_blank">纪录片</a>
+                            </div>
+                            <div class="channel-link"><a class=""
+                                    href="https://www.bilibili.com/v/douga/?spm_id_from=333.1007.0.0"
+                                    style="letter-spacing:2px;" target="_blank">动画</a>
+                                <div class="donghua same">
+                                    <span>MAD·AMV</span><span>特摄</span><span>MMD·3D</span><span>动漫杂谈</span><span>短片·手书·配音</span><span>综合</span><span
+                                        class="fl">手办·模玩</span>
+                                </div>
+                            </div>
+                            <div class="channel-link"><a class=""
+                                    href="https://www.bilibili.com/v/game/?spm_id_from=333.1007.0.0"
+                                    style="letter-spacing:2px;" target="_blank">游戏</a></div>
+                            <div class="channel-link"><a class=""
+                                    href="https://www.bilibili.com/v/kichiku/?spm_id_from=333.1007.0.0"
+                                    style="letter-spacing:2px;" target="_blank">鬼畜</a>
+                                <div class="guicu same">
+                                    <span>鬼畜调教</span><span>教程演示</span>
+                                    <div class="zixun"><span>音MAD</span><span>人力VOCALOID</span><span>鬼畜剧场</span></div>
+                                </div>
+                            </div>
+                            <div class="channel-link"><a class=""
+                                    href="https://www.bilibili.com/v/music/?spm_id_from=333.1007.0.0"
+                                    style="letter-spacing:2px;" target="_blank">音乐</a>
+                            </div>
+                            <div class="channel-link"><a class=""
+                                    href="https://www.bilibili.com/v/dance/?spm_id_from=333.1007.0.0"
+                                    style="letter-spacing:2px;" target="_blank">舞蹈</a>
+                                <div class="fanju same">
+                                    <span>宅舞</span><span>舞蹈综合</span><span>街舞</span><span>舞蹈教程</span>
+                                    <div class="zixun"><span>明星舞蹈</span><span>中国舞</span></div>
+                                </div>
+                            </div>
+                            <div class="channel-link"><a class=""
+                                    href="https://www.bilibili.com/v/cinephile/?spm_id_from=333.1007.0.0"
+                                    style="letter-spacing:2px;" target="_blank">影视</a>
+                                <div class="yingshi same">
+                                    <div class="zixun">
+                                        <span>影视杂谈</span><span>影视剪辑</span><span>小剧场</span><span>预告·资讯</span></div>
+                                </div>
+                            </div>
+                            <div class="channel-link"><a class=""
+                                    href="https://www.bilibili.com/v/ent/?spm_id_from=333.1007.0.0"
+                                    style="letter-spacing:2px;" target="_blank">娱乐</a>
+                                <div class="yule same">
+                                    <div class="zixun">
+                                        <span>综艺</span><span>娱乐杂谈</span><span>粉丝创作</span><span>明星综合</span></div>
+                                </div>
+                            </div>
+                            <div class="channel-link">
+                                <a class="" href="https://www.bilibili.com/v/knowledge/?spm_id_from=333.1007.0.0"
+                                    style="letter-spacing:2px;" target="_blank">知识</a>
+                            </div>
+                            <div class="channel-link">
+                                <a class="" href="https://www.bilibili.com/v/tech/?spm_id_from=333.1007.0.0"
+                                    style="letter-spacing:2px;" target="_blank">科技</a>
+                                <div class="fanju same">
+                                    <span>数码</span><span>极客DIY</span>
+                                    <div class="zixun"><span>软件应用</span><span>计算机技术</span><span>科工机械</span></div>
+                                </div>
+                            </div>
+                            <div class="channel-link"><a class=""
+                                    href="https://www.bilibili.com/v/information/?spm_id_from=333.1007.0.0"
+                                    style="letter-spacing:2px;" target="_blank">资讯</a>
+                                <div class="zix same">
+                                    <div class="zixun"><span>热点</span><span>环球</span><span>社会</span><span>综合</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="channel-link"><a class=""
+                                    href="https://www.bilibili.com/v/food/?spm_id_from=333.1073.0.0"
+                                    style="letter-spacing:2px;" target="_blank">美食</a>
+                                <div class="fanju same">
+                                    <span>美食制作</span><span>美食记录</span>
+                                    <div class="zixun"><span>美食侦探</span><span>美食测评</span><span>田园美食</span></div>
+                                </div>
+                            </div>
+                            <div id="channel-entry-more" class="channel-entry-more__link channel-link">
+                                <span>更多</span><svg width="10" height="10" viewBox="0 0 9 9" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg" class="channel-entry-more__link--arrow">
+                                    <path fill-rule="evenodd" clip-rule="evenodd"
+                                        d="M7.50588 3.40623C7.40825 3.3086 7.24996 3.3086 7.15232 3.40623L4.41244 6.14612L1.67255 3.40623C1.57491 3.3086 1.41662 3.3086 1.31899 3.40623C1.22136 3.50386 1.22136 3.66215 1.31899 3.75978L4.11781 6.5586C4.28053 6.72132 4.54434 6.72132 4.70706 6.5586L7.50588 3.75978C7.60351 3.66215 7.60351 3.50386 7.50588 3.40623Z"
+                                        fill="currentColor"></path>
+                                    <path
+                                        d="M7.15232 3.40623L7.50588 3.75978L7.50588 3.75978L7.15232 3.40623ZM7.50588 3.40623L7.15232 3.75978L7.15233 3.75978L7.50588 3.40623ZM4.41244 6.14612L4.05888 6.49967C4.15265 6.59344 4.27983 6.64612 4.41244 6.64612C4.54504 6.64612 4.67222 6.59344 4.76599 6.49967L4.41244 6.14612ZM1.67255 3.40623L2.0261 3.05268L2.0261 3.05268L1.67255 3.40623ZM1.31899 3.40623L0.965439 3.05268L0.965439 3.05268L1.31899 3.40623ZM1.31899 3.75978L1.67255 3.40623V3.40623L1.31899 3.75978ZM4.11781 6.5586L3.76425 6.91215L4.11781 6.5586ZM4.70706 6.5586L4.35351 6.20505L4.70706 6.5586ZM7.50588 3.75978L7.15233 3.40623L7.15232 3.40623L7.50588 3.75978ZM7.50588 3.75978C7.40825 3.85742 7.24996 3.85742 7.15232 3.75978L7.85943 3.05268C7.56654 2.75978 7.09166 2.75978 6.79877 3.05268L7.50588 3.75978ZM4.76599 6.49967L7.50588 3.75978L6.79877 3.05268L4.05888 5.79257L4.76599 6.49967ZM1.31899 3.75978L4.05888 6.49967L4.76599 5.79257L2.0261 3.05268L1.31899 3.75978ZM1.67254 3.75979C1.57491 3.85742 1.41662 3.85742 1.31899 3.75979L2.0261 3.05268C1.73321 2.75978 1.25833 2.75978 0.965439 3.05268L1.67254 3.75979ZM1.67255 3.40623C1.77018 3.50386 1.77018 3.66215 1.67255 3.75978L0.965439 3.05268C0.672546 3.34557 0.672546 3.82044 0.965439 4.11334L1.67255 3.40623ZM4.47136 6.20505L1.67255 3.40623L0.965439 4.11334L3.76425 6.91215L4.47136 6.20505ZM4.35351 6.20505C4.38605 6.1725 4.43882 6.1725 4.47136 6.20505L3.76425 6.91215C4.12223 7.27013 4.70264 7.27013 5.06062 6.91215L4.35351 6.20505ZM7.15232 3.40623L4.35351 6.20505L5.06062 6.91215L7.85943 4.11334L7.15232 3.40623ZM7.15233 3.75978C7.05469 3.66215 7.05469 3.50386 7.15233 3.40623L7.85943 4.11334C8.15233 3.82045 8.15233 3.34557 7.85943 3.05268L7.15233 3.75978Z"
+                                        fill="currentColor"></path>
+                                </svg>
+                            </div>
+                            <!---->
+                            <!--]-->
+                        </div>
+                        <div class="channel-items__right fl">
+                            <!--[-->
+                            <!--[--><a class="channel-link__right" href="//www.bilibili.com/read/home"
+                                style="letter-spacing:2px;" target="_blank"><img
+                                    src="./imges/13.jpg" /><span>专栏</span></a>
+                            <!---->
+                            <!--]-->
+
+                            <!--[--><a class="channel-link__right"
+                                href="//www.bilibili.com/blackboard/activity-list.html?" style="letter-spacing:2px;"
+                                target="_blank"><img src="./imges/14.jpg" /><span>活动</span></a>
+                            <!---->
+                            <!--[--><a class="channel-link__right"
+                                href="https://www.bilibili.com/blackboard/activity-5zJxM3spoS.html"
+                                style="letter-spacing:0px;" target="_blank"><img
+                                    src="./imges/15.jpg" /><span>社区中心</span></a>
+                            <!--]-->
+                            <!--[--><a class="channel-link__right" href="//live.bilibili.com"
+                                style="letter-spacing:2px;" target="_blank"><img
+                                    src="./imges/16.jpg" /><span>直播</span></a>
+                            <!---->
+                            <!--]-->
+                            <!--[--><a class="channel-link__right"
+                                href="//www.bilibili.com/cheese/?csource=common_hp_channelclass_icon"
+                                style="letter-spacing:2px;" target="_blank"><img
+                                    src="./imges/17.jpg" /><span>课堂</span></a>
+                            <!---->
+                            <!--]-->
+
+                            <!---->
+                            <!--]-->
+                            <!--[--><a class="channel-link__right" href="//www.bilibili.com/v/musicplus/"
+                                style="letter-spacing:0px;" target="_blank"><img
+                                    src="./imges/18.jpg" /><span>新歌热榜</span></a>
+                            <!---->
+                            <!--]-->
+                            <!--]-->
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+        </div>
+        <style>
+            .palette-button-wrap {
+                width: 36px;
+                height: 150px;
+                position: fixed;
+                left: 1280px;
+                top: 300px;
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+            }
+
+            .palette-button-wrap .feedback {
+                width: 32px;
+                height: 32px;
+                border: 1px solid #e3e5e7;
+                border-radius: 10%;
+                padding: 2px;
+                font-size: 12px;
+                text-align: center;
+            }
+
+            .palette-button-wrap .service {
+                border: 1px solid #e3e5e7;
+                border-radius: 10%;
+            }
+
+            .palette-button-wrap .go-back {
+                border: 1px solid #e3e5e7;
+                border-radius: 10%;
+                font-size: 12px;
+                background-color: white;
+            }
+
+            .palette-button-wrap img {
+                margin-left: 4px;
+            }
+
+            .palette-button-wrap .primary-btn-text {
+                width: 36px;
+                font-size: 12px;
+                text-align: center;
+                display: inline-block;
+            }
+
+            .palette-button-wrap .primary-btn:hover {
+                background-color: #e3e5e7;
+
+            }
+        </style>
+        <div class="palette-button-wrap">
+            <a target="_blank" href="https://www.bilibili.com/blackboard/activity-xKR6yNjuJ6.html"
+                class="primary-btn feedback visible"> 新版反馈 </a>
+            <a target="_blank" href="https://www.bilibili.com/v/customer-service" class="primary-btn service"><img
+                    src="./imges/50.jpg" /><span class="primary-btn-text">客服</span></a>
+            <button class="primary-btn go-back"> 退出内测 </button>
+            <!-- <button class="primary-btn top-btn"
+                data-v-1bc70bcb=""><svg class="top-icon" data-v-1bc70bcb="">
+                    <use xlink:href="#palette-top"></use>
+                </svg><span class="primary-btn-text" data-v-1bc70bcb="">顶部</span></button> -->
+        </div>
+
+        <style>
+            .box-top {
+                height: 488px;
+            }
+
+            .carousel-area img {
+                width: 578px;
+                height: 400px;
+            }
+
+            .video-one {
+                width: 280px;
+                padding-left: 22px;
+                padding-bottom: 12px;
+            }
+
+            .video-one .content {
+                height: 42px;
+                margin: 5px auto;
+                display: inline-block;
+                font-size: 16px;
+                overflow: hidden;
+            }
+
+            .video-one .content:hover {
+                color: #2fbdef;
+            }
+
+            .video-one .up-name span {
+                padding: 2px;
+                color: #ff7f24;
+                font-size: 12px;
+                border-radius: 5%;
+                background-color: #fff0e3;
+            }
+
+            .video-one .up-name a {
+                color: #9499a0;
+            }
+
+            .video-one .up-name a:hover {
+                color: #2fbdef;
+            }
+        </style>
+        <!-- 轮播图样式开始 -->
+        <style type="text/css">
+            .imgBox {
+                width: 578px;
+                height: 400px;
+            }
+
+            .imgBox img {
+                width: 100%;
+                height: 400px;
+                margin: 0 auto;
+            }
+
+            .img1 {
+                display: block;
+            }
+
+            .img2 {
+                display: none;
+            }
+
+            .img3 {
+                display: none;
+            }
+        </style>
+        <!-- 轮播图样式结束 -->
+        <style>
+            .carousel-area {
+                position: relative;
+            }
+
+            .carousel-area .dot {
+                width: 180px;
+                height: 15px;
+                position: absolute;
+                bottom: 24px;
+                left: 3%;
+                z-index: 2;
+            }
+
+            .carousel-area .dot ul li {
+                float: left;
+                width: 10px;
+                height: 10px;
+                background: grey;
+                border-radius: 50%;
+                margin-right: 10px;
+                margin-top: 2.5px;
+                cursor: pointer;
+            }
+
+            .carousel-area .dot ul li.active {
+                background: white;
+                height: 15px;
+                width: 15px;
+                border-radius: 50%;
+                margin-top: 0;
+                float: left;
+            }
+
+            .carousel-area .dot ul li:last-child {
+                margin-right: 0;
+            }
+
+            .carousel-area .baner-bg {
+                width: 578px;
+                height: 90px;
+                position: absolute;
+                margin-top: -90px;
+                left: 0%;
+                background-color: #59362b;
+                z-index: 1;
+            }
+
+            .carousel-area .bg-one {
+                width: 22px;
+                height: 22px;
+                display: inline-block;
+                position: absolute;
+                left: 85%;
+                bottom: 45px;
+                z-index: 2;
+            }
+
+            .carousel-area .bg-two {
+                width: 22px;
+                height: 22px;
+                display: inline-block;
+                position: absolute;
+                left: 92%;
+                bottom: 45px;
+                z-index: 2;
+            }
+        </style>
+        <div class="box-top contianer">
+            <div class="carousel-area fl">
+                <div class="imgBox">
+                    <img class="img-slide img1" src="./imges/25-1.png" alt="1">
+                    <img class="img-slide img2" src="./imges/25-2.jpg" alt="2">
+                    <img class="img-slide img2" src="./imges/25-3.jpg" alt="3">
+                    <img class="img-slide img2" src="./imges/25-4.jpg" alt="4">
+                    <img class="img-slide img2" src="./imges/25-5.jpg" alt="5">
+                    <img class="img-slide img2" src="./imges/25-6.jpg" alt="6">
+                    <img class="img-slide img2" src="./imges/25-7.jpg" alt="7">
+                </div>
+                <div class="baner-bg"></div>
+                <img class="bg-one" src="./imges/59.jpg" />
+                <img class="bg-two" src="./imges/60.jpg" />
+                <div class="dot">
+                    <ul class="clearfix">
+                        <li class="active"></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="video-one fl">
+                <img src="./imges/26.jpg" />
+                <a class="content"
+                    href="https://www.bilibili.com/video/BV16841187or/?spm_id_from=333.1007.tianma.1-1-1.click"
+                    target="_blank">我能相信这俩玩意吗?</a>
+                <div class="up-name"><span>13万点赞</span>
+                    <a href="https://space.bilibili.com/12394995?spm_id_from=333.1007.tianma.1-1-1.click"> 粗犷毛线君</a>
+                </div>
+            </div>
+            <div class="video-one fl">
+                <img src="./imges/27.jpg" />
+                <a class="content"
+                    href="https://www.bilibili.com/video/BV1hg411p7pG/?spm_id_from=333.1007.tianma.1-1-1.click"
+                    target="_blank">测一测你的性格危险等级！有潜在犯罪风险吗？</a>
+                <div class="up-name"><span>4万点赞</span>
+                    <a href="https://space.bilibili.com/20751018?spm_id_from=333.1007.tianma.1-1-1.click"> 阿渣大王</a>
+                </div>
+            </div>
+            <div class="video-one fl">
+                <img src="./imges/28.jpg" />
+                <a class="content"
+                    href="https://www.bilibili.com/video/BV11D4y1t73q/?spm_id_from=333.1007.tianma.1-1-1.click"
+                    target="_blank">“治愈神曲《群青》，无法超越的绝美画面!！”</a>
+                <div class="up-name"><span>21万点赞</span>
+                    <a href="https://space.bilibili.com/270494247?spm_id_from=333.1007.tianma.1-1-1.click">
+                        血小板</a>
+                </div>
+            </div>
+            <div class="video-one fl">
+                <img src="./imges/29.jpg" />
+                <a class="content"
+                    href="https://www.bilibili.com/video/BV15K411Z75t/?spm_id_from=333.1007.tianma.1-1-1.click&vd_source=389bea758cd9d9592549e92b48931d5d"
+                    target="_blank">“我以为忘了想念”</a>
+                <div class="up-name"><span>12万点赞</span>
+                    <a href="https://space.bilibili.com/30502823?spm_id_from=333.1007.tianma.1-1-1.click"> 学姐圆</a>
+                </div>
+            </div>
+        </div>
+        <style>
+            .box-bottom {
+                display: flex;
+                justify-content: space-between;
+            }
+
+            .video-two {
+                width: 280px;
+                margin-bottom: 40px;
+            }
+
+            .video-two .content {
+                height: 42px;
+                margin: 5px auto;
+                display: inline-block;
+                font-size: 16px;
+                overflow: hidden;
+            }
+
+            .video-two .content:hover {
+                color: #2fbdef;
+            }
+
+            .video-two .up-name span {
+                padding: 2px;
+                color: #ff7f24;
+                font-size: 12px;
+                border-radius: 5%;
+                background-color: #fff0e3;
+            }
+
+            .video-two .up-name a {
+                color: #9499a0;
+            }
+
+            .video-two .up-name a:hover {
+                color: #2fbdef;
+            }
+
+            video {
+                background-color: black;
+            }
+        </style>
+        <div class="box-bottom contianer">
+            <div class="video-two">
+                <video id="videoPlayer" ontimeupdate="progressUpdate()" width="280" height="156" controls="controls">
+                    <source src="./imges/baomihua.mp4" type="video/mp4">
+                </video>
+                <a class="content"
+                    href="https://tv.360kan.com/player?id=bb7377cf493fb7f2c1ed01e4442eb49a&q=%E4%B8%80%E5%88%86%E9%92%9F%E8%A7%86%E5%B1%8F&src=result-video&srcg=result-video"
+                    target="_blank">仅3天就点赞量就过亿的一分钟视频,看完后温暖了一整天爆米花视频</a>
+                <div class="up-name"><span>15万点赞</span>
+                    <a href="#"> 爆米花视频</a>
+                </div>
+            </div>
+            <div class="video-two">
+                <video id="videoPlayer" ontimeupdate="progressUpdate()" width="280" height="156" controls="controls">
+                    <source src="./imges/yangzai.mp4" type="video/mp4">
+                </video>
+                <a class="content" href="https://www.bilibili.com/video/av37237071/" target="_blank">视频教学，希望你看明白虎牙直播</a>
+                <div class="up-name"><span>13万点赞</span>
+                    <a href="#"> 阳仔</a>
+                </div>
+            </div>
+            <div class="video-two">
+                <video id="videoPlayer" ontimeupdate="progressUpdate()" width="280" height="156" controls="controls">
+                    <source src="./imges/leshi.mp4" type="video/mp4">
+                </video>
+                <a class="content"
+                    href="https://tv.360kan.com/player?id=a5a04c2eab3a26d89e4ff34c4f3ec947&q=%E4%B8%80%E5%88%86%E9%92%9F%E8%A7%86%E5%B1%8F&src=result-like&srcg=result-like"
+                    target="_blank">时间的计算，到底有什么玄机？</a>
+                <div class="up-name"><span>23万点赞</span>
+                    <a href="#"> 乐视视频</a>
+                </div>
+            </div>
+            <div class="video-two">
+                <video id="videoPlayer" ontimeupdate="progressUpdate()" width="280" height="156" controls="controls">
+                    <source src="./imges/yq.mp4" type="video/mp4">
+                </video>
+                <a class="content"
+                    href="https://www.bilibili.com/video/BV16841187or/?spm_id_from=333.1007.tianma.1-1-1.click"
+                    target="_blank">我能相信这俩玩意吗?</a>
+                <div class="up-name"><span>18万点赞</span>
+                    <a href="#"> 爆米花视频</a>
+                </div>
+            </div>
+        </div>
+        <div class="nav-floor contianer">
+            <div class="box-bottom">
+                <div class="video-two">
+                    <img src="./imges/30.jpg" />
+                    <a class="content"
+                        href="https://www.bilibili.com/video/BV16841187or/?spm_id_from=333.1007.tianma.1-1-1.click"
+                        target="_blank">我能相信这俩玩意吗?</a>
+                    <div class="up-name"><span>13万点赞</span>
+                        <a href="https://space.bilibili.com/12394995?spm_id_from=333.1007.tianma.1-1-1.click">
+                            粗犷毛线君</a>
+                    </div>
+                </div>
+                <div class="video-two">
+                    <img src="./imges/31.jpg" />
+                    <a class="content"
+                        href="https://www.bilibili.com/video/BV16841187or/?spm_id_from=333.1007.tianma.1-1-1.click"
+                        target="_blank">我能相信这俩玩意吗?</a>
+                    <div class="up-name"><span>13万点赞</span>
+                        <a href="https://space.bilibili.com/12394995?spm_id_from=333.1007.tianma.1-1-1.click">
+                            粗犷毛线君</a>
+                    </div>
+                </div>
+                <div class="video-two">
+                    <img src="./imges/32.jpg" />
+                    <a class="content"
+                        href="https://www.bilibili.com/video/BV16841187or/?spm_id_from=333.1007.tianma.1-1-1.click"
+                        target="_blank">我能相信这俩玩意吗?</a>
+                    <div class="up-name"><span>13万点赞</span>
+                        <a href="https://space.bilibili.com/12394995?spm_id_from=333.1007.tianma.1-1-1.click">
+                            粗犷毛线君</a>
+                    </div>
+                </div>
+                <div class="video-two">
+                    <img src="./imges/33.jpg" />
+                    <a class="content"
+                        href="https://www.bilibili.com/video/BV16841187or/?spm_id_from=333.1007.tianma.1-1-1.click"
+                        target="_blank">我能相信这俩玩意吗?</a>
+                    <div class="up-name"><span>13万点赞</span>
+                        <a href="https://space.bilibili.com/12394995?spm_id_from=333.1007.tianma.1-1-1.click">
+                            粗犷毛线君</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="box-bottom contianer">
+            <div class="video-two">
+                <img src="./imges/34.jpg" />
+                <a class="content"
+                    href="https://www.bilibili.com/video/BV16841187or/?spm_id_from=333.1007.tianma.1-1-1.click"
+                    target="_blank">我能相信这俩玩意吗?</a>
+                <div class="up-name"><span>13万点赞</span>
+                    <a href="https://space.bilibili.com/12394995?spm_id_from=333.1007.tianma.1-1-1.click"> 粗犷毛线君</a>
+                </div>
+            </div>
+            <div class="video-two">
+                <img src="./imges/35.jpg" />
+                <a class="content"
+                    href="https://www.bilibili.com/video/BV16841187or/?spm_id_from=333.1007.tianma.1-1-1.click"
+                    target="_blank">我能相信这俩玩意吗?</a>
+                <div class="up-name"><span>13万点赞</span>
+                    <a href="https://space.bilibili.com/12394995?spm_id_from=333.1007.tianma.1-1-1.click"> 粗犷毛线君</a>
+                </div>
+            </div>
+            <div class="video-two">
+                <img src="./imges/36.jpg" />
+                <a class="content"
+                    href="https://www.bilibili.com/video/BV16841187or/?spm_id_from=333.1007.tianma.1-1-1.click"
+                    target="_blank">我能相信这俩玩意吗?</a>
+                <div class="up-name"><span>13万点赞</span>
+                    <a href="https://space.bilibili.com/12394995?spm_id_from=333.1007.tianma.1-1-1.click"> 粗犷毛线君</a>
+                </div>
+            </div>
+            <div class="video-two">
+                <img src="./imges/37.jpg" />
+                <a class="content"
+                    href="https://www.bilibili.com/video/BV16841187or/?spm_id_from=333.1007.tianma.1-1-1.click"
+                    target="_blank">我能相信这俩玩意吗?</a>
+                <div class="up-name"><span>13万点赞</span>
+                    <a href="https://space.bilibili.com/12394995?spm_id_from=333.1007.tianma.1-1-1.click"> 粗犷毛线君</a>
+                </div>
+            </div>
+        </div>
+        <div class="box-bottom contianer">
+            <div class="video-two">
+                <img src="./imges/38.jpg" />
+                <a class="content"
+                    href="https://www.bilibili.com/video/BV16841187or/?spm_id_from=333.1007.tianma.1-1-1.click"
+                    target="_blank">我能相信这俩玩意吗?</a>
+                <div class="up-name"><span>13万点赞</span>
+                    <a href="https://space.bilibili.com/12394995?spm_id_from=333.1007.tianma.1-1-1.click"> 粗犷毛线君</a>
+                </div>
+            </div>
+            <div class="video-two">
+                <img src="./imges/39.jpg" />
+                <a class="content"
+                    href="https://www.bilibili.com/video/BV16841187or/?spm_id_from=333.1007.tianma.1-1-1.click"
+                    target="_blank">我能相信这俩玩意吗?</a>
+                <div class="up-name"><span>13万点赞</span>
+                    <a href="https://space.bilibili.com/12394995?spm_id_from=333.1007.tianma.1-1-1.click"> 粗犷毛线君</a>
+                </div>
+            </div>
+            <div class="video-two">
+                <img src="./imges/40.jpg" />
+                <a class="content"
+                    href="https://www.bilibili.com/video/BV16841187or/?spm_id_from=333.1007.tianma.1-1-1.click"
+                    target="_blank">我能相信这俩玩意吗?</a>
+                <div class="up-name"><span>13万点赞</span>
+                    <a href="https://space.bilibili.com/12394995?spm_id_from=333.1007.tianma.1-1-1.click"> 粗犷毛线君</a>
+                </div>
+            </div>
+            <div class="video-two">
+                <img src="./imges/41.jpg" />
+                <a class="content"
+                    href="https://www.bilibili.com/video/BV16841187or/?spm_id_from=333.1007.tianma.1-1-1.click"
+                    target="_blank">我能相信这俩玩意吗?</a>
+                <div class="up-name"><span>13万点赞</span>
+                    <a href="https://space.bilibili.com/12394995?spm_id_from=333.1007.tianma.1-1-1.click"> 粗犷毛线君</a>
+                </div>
+            </div>
+        </div>
+        <div class="box-bottom contianer">
+            <div class="video-two">
+                <img src="./imges/42.jpg" />
+                <a class="content"
+                    href="https://www.bilibili.com/video/BV16841187or/?spm_id_from=333.1007.tianma.1-1-1.click"
+                    target="_blank">我能相信这俩玩意吗?</a>
+                <div class="up-name"><span>13万点赞</span>
+                    <a href="https://space.bilibili.com/12394995?spm_id_from=333.1007.tianma.1-1-1.click"> 粗犷毛线君</a>
+                </div>
+            </div>
+            <div class="video-two">
+                <img src="./imges/43.jpg" />
+                <a class="content"
+                    href="https://www.bilibili.com/video/BV16841187or/?spm_id_from=333.1007.tianma.1-1-1.click"
+                    target="_blank">我能相信这俩玩意吗?</a>
+                <div class="up-name"><span>13万点赞</span>
+                    <a href="https://space.bilibili.com/12394995?spm_id_from=333.1007.tianma.1-1-1.click"> 粗犷毛线君</a>
+                </div>
+            </div>
+            <div class="video-two">
+                <img src="./imges/44.jpg" />
+                <a class="content"
+                    href="https://www.bilibili.com/video/BV16841187or/?spm_id_from=333.1007.tianma.1-1-1.click"
+                    target="_blank">我能相信这俩玩意吗?</a>
+                <div class="up-name"><span>13万点赞</span>
+                    <a href="https://space.bilibili.com/12394995?spm_id_from=333.1007.tianma.1-1-1.click"> 粗犷毛线君</a>
+                </div>
+            </div>
+            <div class="video-two">
+                <img src="./imges/45.jpg" />
+                <a class="content"
+                    href="https://www.bilibili.com/video/BV16841187or/?spm_id_from=333.1007.tianma.1-1-1.click"
+                    target="_blank">我能相信这俩玩意吗?</a>
+                <div class="up-name"><span>13万点赞</span>
+                    <a href="https://space.bilibili.com/12394995?spm_id_from=333.1007.tianma.1-1-1.click"> 粗犷毛线君</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<script type="text/javascript">
+    var index = 0;
+    //效果
+    function ChangeImg() {
+        index++;
+        var a = document.getElementsByClassName("img-slide");
+        if (index >= a.length) index = 0;
+        for (var i = 0; i < a.length; i++) {
+            a[i].style.display = 'none';
+        }
+        a[index].style.display = 'block';
+    }
+    //设置定时器，每隔两秒切换一张图片
+    setInterval(ChangeImg, 3000);
+</script>
+<script>
+    var video;
+    window.onload = function () {
+        local1 = document.getElementById("videoPlayer");
+        local1.autoplay = true; // 自动播放
+        local1.loop = true; // 循环播放
+        local1.muted = true; // 关闭声音，如果为false,视频无法自动播放
+        if (local1.paused) {  //判断是否处于暂停状态
+            local1.play();  //开启播放
+        } else {
+            local1.pause();  //停止播放
+        }
+    }
+</script>
+
+</html>

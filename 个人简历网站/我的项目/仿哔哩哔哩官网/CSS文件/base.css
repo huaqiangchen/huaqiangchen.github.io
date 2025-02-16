@@ -1,0 +1,54 @@
+/* 样式初始化开始 */
+* {
+    margin: 0;
+    padding: 0;
+}
+
+/* 去掉项目符号 */
+li {
+    list-style: none;
+    float: left;
+}
+
+/* 去掉图片底部缝隙 */
+img {
+    vertical-align: bottom;
+}
+
+/* 超链接美化 */
+a {
+    text-decoration: none;
+    color: #333333;
+}
+
+/* 左浮动类 */
+.fl {
+    float: left;
+}
+
+/* 右浮动类 */
+.fr {
+    float: right;
+}
+
+/* 清除浮动类 */
+clearfix::after {
+    content: "";
+    display: block;
+    clear: both;
+}
+
+/* 整个页面字体大小和字体颜色 */
+body {
+    font-size: 14px;
+    font-family: "微软雅黑";
+    color: #666666;
+}
+
+/* 版心类 */
+.contianer {
+    width: 1182px;
+    margin: 0 auto;
+}
+
+/* 样式初始化结束 */
