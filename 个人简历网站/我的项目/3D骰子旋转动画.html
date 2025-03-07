@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .dice {
+            width: 200px;
+            height: 200px;
+            padding: 20px;
+            background-color: rgba(224, 224, 215, 0.75);
+            border-radius: 3%;
+            display: grid;
+            grid-template: repeat(3, 1fr) / repeat(3, 1fr);
+            grid-template-areas:
+                "a . c"
+                "e g f"
+                "d . b";
+            position: absolute;
+        }
+
+        .dot:nth-child(2) {
+            grid-area: b;
+        }
+
+        .dot:nth-child(3) {
+            grid-area: c;
+        }
+
+        .dot:nth-child(4) {
+            grid-area: d;
+        }
+
+        .dot:nth-child(5) {
+            grid-area: e;
+        }
+
+        .dot:nth-child(6) {
+            grid-area: f;
+        }
+
+        .dot:nth-child(odd):last-child {
+            grid-area: g;
+        }
+
+        .dot {
+            display: inline-block;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background-color: rgb(216, 27, 37);
+        }
+
+        .dice-box {
+            width: 300px;
+            height: 300px;
+            margin-top: 100px;
+            margin-left: 100px;
+            transform-style: preserve-3d;
+            transform: rotateY(185deg) rotateX(150deg) rotateZ(315deg);
+        }
+
+        .first-face {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transform: translateZ(120px);
+            backface-visibility: hidden;
+        }
+
+        .second-face {
+            display: flex;
+            justify-content: space-between;
+            transform: translateX(-120px) rotateY(-90deg);
+            backface-visibility: hidden;
+        }
+
+        .second-face .dot:nth-of-type(2) {
+            align-self: flex-end;
+        }
+
+        .third-face {
+            display: flex;
+            justify-content: space-between;
+            transform: translateY(120px) rotateX(-90deg);
+            backface-visibility: hidden;
+        }
+
+        .third-face .dot:nth-of-type(2) {
+            align-self: center;
+        }
+
+        .third-face .dot:nth-of-type(3) {
+            align-self: flex-end;
+        }
+
+        .fourth-face {
+            display: flex;
+            justify-content: space-between;
+            transform: translateY(-120px) rotateX(90deg);
+            backface-visibility: hidden;
+        }
+
+        .fourth-face .column {
+            display: flex;
+            justify-content: space-between;
+            flex-direction: column;
+        }
+
+        .fifth-face {
+            display: flex;
+            justify-content: space-between;
+            transform: translateX(120px) rotateY(90deg);
+            backface-visibility: hidden;
+        }
+
+        .fifth-face .column {
+            display: flex;
+            justify-content: space-between;
+            flex-direction: column;
+        }
+
+        .fifth-face .column:nth-of-type(2) {
+            justify-content: center;
+        }
+
+        .sixth-face {
+            display: flex;
+            justify-content: space-between;
+            transform: translateZ(-120px) rotateY(180deg);
+            backface-visibility: hidden;
+        }
+
+        .sixth-face .column {
+            display: flex;
+            justify-content: space-between;
+            flex-direction: column;
+        }
+
+        @keyframes rotate {
+            from {
+                transform: rotateY(0) rotateX(45deg) rotateZ(45deg);
+            }
+
+            to {
+                transform: rotateY(360deg) rotateX(45deg) rotateZ(45deg);
+            }
+        }
+
+        .dice-box {
+            margin: 0 auto;
+            margin-top: 150px;
+            animation: rotate 5s linear infinite;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="dice-box">
+        <div class="dice first-face">
+            <span class="dot"></span>
+        </div>
+        <div class="dice second-face">
+            <span class="dot"></span>
+            <span class="dot"></span>
+        </div>
+        <div class="dice third-face">
+            <span class="dot"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+        </div>
+        <div class="dice fourth-face">
+            <div class="column">
+                <span class="dot"></span>
+                <span class="dot"></span>
+            </div>
+            <div class="column">
+                <span class="dot"></span>
+                <span class="dot"></span>
+            </div>
+        </div>
+        <div class="dice fifth-face">
+            <div class="column">
+                <span class="dot"></span>
+                <span class="dot"></span>
+            </div>
+            <div class="column">
+                <span class="dot"></span>
+            </div>
+            <div class="column">
+                <span class="dot"></span>
+                <span class="dot"></span>
+            </div>
+        </div>
+        <div class="dice sixth-face">
+            <div class="column">
+                <span class="dot"></span>
+                <span class="dot"></span>
+                <span class="dot"></span>
+            </div>
+            <div class="column">
+                <span class="dot"></span>
+                <span class="dot"></span>
+                <span class="dot"></span>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

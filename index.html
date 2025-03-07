@@ -1,0 +1,718 @@
+<!doctype html>
+<html lang="zh-CN">
+
+<head>
+  <!-- 必须的 meta 标签 -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!-- Bootstrap 的 CSS 文件 -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
+    integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+
+  <title>我的个人简历</title>
+  <link rel="stylesheet" href="./个人简历网站/css/style.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
+  <style>
+    @font-face {
+      font-family: "myfont-1";
+      src: url(./个人简历网站/font/myfont-1.ttf);
+    }
+
+    #canvas {
+      /* position:absolute; */
+      width: 100%;
+      height: 100vh;
+
+    }
+
+    .con {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      z-index: -100;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="head">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm">
+          <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <a class="navbar-brand" href="#">Navbar</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
+              aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavDropdown">
+              <ul class="navbar-nav">
+                <li class="nav-item active">
+                  <a class="nav-link" href="#">主页</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">关于我</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">作品</a>
+                </li>
+                <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown"
+                    aria-expanded="false">
+                    下拉菜单
+                  </a>
+                  <div class="dropdown-menu">
+                    <a class="dropdown-item" href="#">Action</a>
+                    <a class="dropdown-item" href="#">Another action</a>
+                    <a class="dropdown-item" href="#">Something else here</a>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="name">陈强华 front Developer</div>
+          </nav>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="myhome">
+    <div class="myhome-title">
+      <i class="bi bi-house-door-fill" style="font-size: 60px;"></i>
+      <span class="home">主页</span>
+      <div class="home-right-bg"></div>
+    </div>
+    <div class="con"><canvas id="canvas"></canvas></div>
+    <div class="myhome-content">
+      <div class="container">
+        <div class="row">
+          <div class="col-12 col-lg-6">
+            <div class="single">
+              <div class="single-img">
+                <img src="./个人简历网站/image/touxiang.jpg" alt="">
+              </div>
+              <div class="single-content">
+                <h3>陈强华</h3>
+              </div>
+            </div>
+          </div>
+          <div class="col-12 col-lg-6">
+            <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+              <ol class="carousel-indicators">
+                <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+                <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+                <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+                <li data-target="#carouselExampleIndicators" data-slide-to="3"></li>
+              </ol>
+              <div class="carousel-inner">
+                <div class="carousel-item active">
+                  <img src="./个人简历网站/image/bg-1.jpg" class="d-block w-100" alt="...">
+                </div>
+                <div class="carousel-item">
+                  <img src="./个人简历网站/image/bg-2.jpg" class="d-block w-100" alt="...">
+                </div>
+                <div class="carousel-item">
+                  <img src="./个人简历网站/image/bg-3.jpg" class="d-block w-100" alt="...">
+                </div>
+                <div class="carousel-item">
+                  <img src="./个人简历网站/image/bg-4.jpg" class="d-block w-100" alt="...">
+                </div>
+              </div>
+              <button class="carousel-control-prev" type="button" data-target="#carouselExampleIndicators"
+                data-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="sr-only">Previous</span>
+              </button>
+              <button class="carousel-control-next" type="button" data-target="#carouselExampleIndicators"
+                data-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="sr-only">Next</span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="myself">
+    <div class="myself-title">
+      <i class="bi bi-dropbox" style="font-size: 60px;"></i>
+      <span class="skill">技能</span>
+    </div>
+    <div class="myself-content">
+      <div class="container">
+        <div class="row">
+          <div class="col-12 col-lg-6">
+            <div class="myself-box">
+              <ul class="skill-circle">
+                <div class="row">
+                  <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+                    <li class="circle"><span class="d1">70%</span><span class="d">语言能力</span></li>
+                  </div>
+                  <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+                    <li class="circle"><span class="d2">80%</span><span class="d">计算机能力</span></li>
+                  </div>
+                  <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+                    <li class="circle"><span class="d1">60%</span><span class="d">其他方面能力</span></li>
+                  </div>
+                  <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+                    <li class="circle"><span class="d2">80%</span><span class="d">其他方面能力</span></li>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+                    <li class="circle"><span class="d1">90%</span><span class="d">其他方面能力</span></li>
+                  </div>
+                  <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+                    <li class="circle"><span class="d2">70%</span><span class="d">其他方面能力</span></li>
+                  </div>
+                  <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+                    <li class="circle"><span class="d1">90%</span><span class="d">其他方面能力</span></li>
+                  </div>
+                  <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+                    <li class="circle"><span class="d2">70%</span><span class="d">其他方面能力</span></li>
+                  </div>
+                </div>
+              </ul>
+            </div>
+          </div>
+          <div class="col-12 col-lg-6">
+            <div class="skill-progress">
+              <div class="skill-content pre-one">
+                <span>PHOTOSHOP</span>
+                <div class="progress">
+                  <div class="progress-bar bg-success progress-bar-striped" role="progressbar" style="width: 25%"
+                    aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                </div>
+              </div>
+              <div class="skill-content pre-two">
+                <span>HTML</span>
+                <div class="progress">
+                  <div class="progress-bar bg-info progress-bar-striped" role="progressbar" style="width: 50%"
+                    aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+                </div>
+              </div>
+              <div class="skill-content pre-three">
+                <span>CSS</span>
+                <div class="progress">
+                  <div class="progress-bar bg-warning progress-bar-striped" role="progressbar" style="width: 60%"
+                    aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"></div>
+                </div>
+              </div>
+              <div class="skill-content pre-four">
+                <span>JAVASCRIPT</span>
+                <div class="progress">
+                  <div class="progress-bar bg-danger progress-bar-striped" role="progressbar" style="width: 70%"
+                    aria-valuenow="70" aria-valuemin="0" aria-valuemax="100"></div>
+                </div>
+              </div>
+              <div class="skill-content pre-five">
+                <span>JQUERY</span>
+                <div class="progress">
+                  <div class="progress-bar progress-bar-striped" role="progressbar" style="width: 80%"
+                    aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
+
+  </div>
+  <div class="myworks">
+    <div class="myworks-title">
+      <i class="bi bi-collection-play-fill" style="font-size: 60px;"></i>
+      <span class="works">小案例项目</span>
+    </div>
+    <div class="container">
+      <div class="row">
+        <div class="col">
+          <div class="card" style="width: 20rem;">
+            <div class="car-img">
+              <div class="column-left"></div>
+              <div class="column-center"></div>
+              <div class="column-right"></div>
+              <div class="car"></div>
+            </div>
+            <div class="card-top">////////////////</div>
+            <div class="card-bottom">////////////////</div>
+            <img src="./个人简历网站/image/作品图片/bilibili低仿.jpg" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">作品1 html+css</h5>
+              <p class="card-text">低仿哔哩哔哩静态网页+少量javascript</p>
+              <a href="./个人简历网站/我的项目/仿哔哩哔哩官网/低配仿哔哩哔哩官网.html" class="btn btn-primary">查看详情</a>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card" style="width: 20rem;">
+            <div class="car-img">
+              <div class="column-left"></div>
+              <div class="column-center"></div>
+              <div class="column-right"></div>
+              <div class="car"></div>
+            </div>
+            <div class="card-top">////////////////</div>
+            <div class="card-bottom">////////////////</div>
+            <img src="./个人简历网站/image/作品图片/3d骰子旋转.png" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">作品2 css</h5>
+              <p class="card-text">骰子3d旋转</p>
+              <a href="./个人简历网站/我的项目/3D骰子旋转动画.html" class="btn btn-primary">查看详情</a>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card" style="width: 20rem;">
+            <div class="car-img">
+              <div class="column-left"></div>
+              <div class="column-center"></div>
+              <div class="column-right"></div>
+              <div class="car"></div>
+            </div>
+            <div class="card-top">////////////////</div>
+            <div class="card-bottom">////////////////</div>
+            <img src="./个人简历网站/image/作品图片/抖音动态图标.jpg" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">作品3 css</h5>
+              <p class="card-text">抖音动态图标</p>
+              <a href="./个人简历网站/我的项目/抖音动态图标.html" class="btn btn-primary">查看详情</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col">
+          <div class="card" style="width: 20rem;">
+            <div class="car-img">
+              <div class="column-left"></div>
+              <div class="column-center"></div>
+              <div class="column-right"></div>
+              <div class="car"></div>
+            </div>
+            <div class="card-top">////////////////</div>
+            <div class="card-bottom">////////////////</div>
+            <img src="./个人简历网站/image/作品图片/鼠标移动炫彩小球.png" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">作品4 javascript</h5>
+              <p class="card-text">鼠标移动炫彩小球</p>
+              <a href="./个人简历网站/我的项目/鼠标移动炫彩小球.html" class="btn btn-primary">查看详情</a>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card" style="width: 20rem;">
+            <div class="car-img">
+              <div class="column-left"></div>
+              <div class="column-center"></div>
+              <div class="column-right"></div>
+              <div class="car"></div>
+            </div>
+            <div class="card-top">////////////////</div>
+            <div class="card-bottom">////////////////</div>
+            <img src="./个人简历网站/image/作品图片/可视化数据.png" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">作品5 javascript</h5>
+              <p class="card-text">可视化数据(echarts.js)</p>
+              <a href="./个人简历网站/我的项目/可视化数据/贵州省人口基础数据库整体质态.html" class="btn btn-primary">查看详情</a>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card" style="width: 20rem;">
+            <div class="car-img">
+              <div class="column-left"></div>
+              <div class="column-center"></div>
+              <div class="column-right"></div>
+              <div class="car"></div>
+            </div>
+            <div class="card-top">////////////////</div>
+            <div class="card-bottom">////////////////</div>
+            <img src="./个人简历网站/image/作品图片/别踩白块小游戏.png" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">作品6 jQuery</h5>
+              <p class="card-text">别踩白块小游戏</p>
+              <a href="./个人简历网站/我的项目/别踩白块小游戏/别踩白块.html" class="btn btn-primary">查看详情</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <footer class="in-footer-section">
+    <div class="container">
+      <div class="in-footer-widget-wrapper">
+        <div class="row">
+          <div class="col-lg-3 col-md-6">
+            <div class="in-footer-widget">
+              <div class="logo-widget">
+                <div class="brand-logo"><a href="#"><img src="./个人简历网站/image/logo1.png" alt=""></a></div>
+                <div class="footer-text">The charms of pleasure of the empect moment,so blinded by desire,thats they
+                  cannot fores that ound to. </div>
+                <div class="footer-social"><a href="#"><i class="bi bi-facebook"></i></a><a href="#"><i
+                      class="bi bi-instagram"></i></a><a href="#"><i class="bi bi-twitter"></i></a></div>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-6">
+            <div class="in-footer-widget">
+              <div class="contact-widget headline">
+                <h3 class="widget-title">Contact info</h3>
+                <div class="contact-info">
+                  <div class="info-item d-flex align-items-center">
+                    <div class="inner-icon d-flex align-items-center justify-content-center"><i
+                        class="bi bi-geo-alt"></i></div>
+                    <div class="inner-text">30 Commercial Road Fratton,Australia </div>
+                  </div>
+                  <div class="info-item d-flex align-items-center">
+                    <div class="inner-icon d-flex align-items-center justify-content-center"><i
+                        class="bi bi-envelope-paper-heart"></i></div>
+                    <div class="inner-text">insurin@company.com 1-888-452-1505 </div>
+                  </div>
+                  <div class="info-item d-flex align-items-center">
+                    <div class="inner-icon d-flex align-items-center justify-content-center"><i
+                        class="bi bi-telephone-plus"></i></div>
+                    <div class="inner-text">Mon – Sat:8 am – 5 pm,Sunday:CLOSED </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-6">
+            <div class="in-footer-widget">
+              <div class="menu-widget headline ul-li-block">
+                <h3 class="widget-title">Our Company</h3>
+                <ul>
+                  <li><a href="#">Our Story</a></li>
+                  <li><a href="#">News &amp; Blog</a></li>
+                  <li><a href="#">Careers</a></li>
+                  <li><a href="#">Customer Support</a></li>
+                  <li><a href="#">Contact Us</a></li>
+                  <li><a href="#">Website Accessibility</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-6">
+            <div class="in-footer-widget">
+              <div class="newslatter-widget headline ul-li-block">
+                <h3 class="widget-title">Subscribe newsletter</h3>
+                <form action="#" method="get"><input type="email" name="email" placeholder="Email"><button
+                    type="submit">Subscribe Now</button></form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="in-footer-copyright-area d-flex justify-content-end">
+        <div class="in-footer-copyright-text">
+          <div class="inner-text d-flex justify-content-end">Copyright © by <a href="javascript:void(0)">bootstrapMB</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+
+  <div onclick="backTop()"
+    style="position: fixed; z-index: 1001; right:25px;bottom:25px;width: 100px;height: 100px;text-align: center;line-height: 100px;">
+    <i class="bi bi-arrow-up-circle"></i>
+  </div>
+  <script>
+    var head = document.querySelector(".head");
+    window.onscroll = function () {
+      // 获取页面垂直滚动距离
+      var curTop = Math.floor(document.documentElement.scrollTop);
+      // 判断滚动距离
+      if (curTop > 62) {
+        head.classList.add("sticky-top")
+      } else {
+        head.classList.remove("sticky-top")
+      }
+    }
+    function backTop() {
+      window.scroll({
+        top: 0,
+        behavior: "smooth"
+      });
+    }
+
+  </script>
+
+
+
+  <!-- JavaScript 文件是可选的。从以下两种建议中选择一个即可！ -->
+
+  <!-- 选项 1：jQuery 和 Bootstrap 集成包（集成了 Popper） -->
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
+    integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct"
+    crossorigin="anonymous"></script>
+
+  <!-- 选项 2：Popper 和 Bootstrap 的 JS 插件各自独立 -->
+  <!--
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.min.js" integrity="sha384-+sLIOodYLS7CIrQpBjl+C7nPvqq+FbNUBDunl/OZv93DB7Ln/533i8e/mZXLi/P+" crossorigin="anonymous"></script>
+    -->
+</body>
+<script>
+  function project3D(x, y, z, vars) {
+
+    var p, d;
+    x -= vars.camX;
+    y -= vars.camY - 8;
+    z -= vars.camZ;
+    p = Math.atan2(x, z);
+    d = Math.sqrt(x * x + z * z);
+    x = Math.sin(p - vars.yaw) * d;
+    z = Math.cos(p - vars.yaw) * d;
+    p = Math.atan2(y, z);
+    d = Math.sqrt(y * y + z * z);
+    y = Math.sin(p - vars.pitch) * d;
+    z = Math.cos(p - vars.pitch) * d;
+    var rx1 = -1000;
+    var ry1 = 1;
+    var rx2 = 1000;
+    var ry2 = 1;
+    var rx3 = 0;
+    var ry3 = 0;
+    var rx4 = x;
+    var ry4 = z;
+    var uc = (ry4 - ry3) * (rx2 - rx1) - (rx4 - rx3) * (ry2 - ry1);
+    var ua = ((rx4 - rx3) * (ry1 - ry3) - (ry4 - ry3) * (rx1 - rx3)) / uc;
+    var ub = ((rx2 - rx1) * (ry1 - ry3) - (ry2 - ry1) * (rx1 - rx3)) / uc;
+    if (!z) z = 0.000000001;
+    if (ua > 0 && ua < 1 && ub > 0 && ub < 1) {
+      return {
+        x: vars.cx + (rx1 + ua * (rx2 - rx1)) * vars.scale,
+        y: vars.cy + y / z * vars.scale,
+        d: (x * x + y * y + z * z)
+      };
+    } else {
+      return { d: -1 };
+    }
+  }
+
+
+  function elevation(x, y, z) {
+
+    var dist = Math.sqrt(x * x + y * y + z * z);
+    if (dist && z / dist >= -1 && z / dist <= 1) return Math.acos(z / dist);
+    return 0.00000001;
+  }
+
+
+  function rgb(col) {
+
+    col += 0.000001;
+    var r = parseInt((0.5 + Math.sin(col) * 0.5) * 16);
+    var g = parseInt((0.5 + Math.cos(col) * 0.5) * 16);
+    var b = parseInt((0.5 - Math.sin(col) * 0.5) * 16);
+    return "#" + r.toString(16) + g.toString(16) + b.toString(16);
+  }
+
+
+  function interpolateColors(RGB1, RGB2, degree) {
+
+    var w2 = degree;
+    var w1 = 1 - w2;
+    return [w1 * RGB1[0] + w2 * RGB2[0], w1 * RGB1[1] + w2 * RGB2[1], w1 * RGB1[2] + w2 * RGB2[2]];
+  }
+
+
+  function rgbArray(col) {
+
+    col += 0.000001;
+    var r = parseInt((0.5 + Math.sin(col) * 0.5) * 256);
+    var g = parseInt((0.5 + Math.cos(col) * 0.5) * 256);
+    var b = parseInt((0.5 - Math.sin(col) * 0.5) * 256);
+    return [r, g, b];
+  }
+
+
+  function colorString(arr) {
+
+    var r = parseInt(arr[0]);
+    var g = parseInt(arr[1]);
+    var b = parseInt(arr[2]);
+    return "#" + ("0" + r.toString(16)).slice(-2) + ("0" + g.toString(16)).slice(-2) + ("0" + b.toString(16)).slice(-2);
+  }
+
+
+  function process(vars) {
+
+
+    if (vars.points.length < vars.initParticles) for (var i = 0; i < 5; ++i) spawnParticle(vars);
+    var p, d, t;
+
+    p = Math.atan2(vars.camX, vars.camZ);
+    d = Math.sqrt(vars.camX * vars.camX + vars.camZ * vars.camZ);
+    d -= Math.sin(vars.frameNo / 80) / 25;
+    t = Math.cos(vars.frameNo / 300) / 165;
+    vars.camX = Math.sin(p + t) * d;
+    vars.camZ = Math.cos(p + t) * d;
+    vars.camY = -Math.sin(vars.frameNo / 220) * 15;
+    vars.yaw = Math.PI + p + t;
+    vars.pitch = elevation(vars.camX, vars.camZ, vars.camY) - Math.PI / 2;
+
+    var t;
+    for (var i = 0; i < vars.points.length; ++i) {
+
+      x = vars.points[i].x;
+      y = vars.points[i].y;
+      z = vars.points[i].z;
+      d = Math.sqrt(x * x + z * z) / 1.0075;
+      t = .1 / (1 + d * d / 5);
+      p = Math.atan2(x, z) + t;
+      vars.points[i].x = Math.sin(p) * d;
+      vars.points[i].z = Math.cos(p) * d;
+      vars.points[i].y += vars.points[i].vy * t * ((Math.sqrt(vars.distributionRadius) - d) * 2);
+      if (vars.points[i].y > vars.vortexHeight / 2 || d < .25) {
+        vars.points.splice(i, 1);
+        spawnParticle(vars);
+      }
+    }
+  }
+
+  function drawFloor(vars) {
+
+    var x, y, z, d, point, a;
+    for (var i = -25; i <= 25; i += 1) {
+      for (var j = -25; j <= 25; j += 1) {
+        x = i * 2;
+        z = j * 2;
+        y = vars.floor;
+        d = Math.sqrt(x * x + z * z);
+        point = project3D(x, y - d * d / 85, z, vars);
+        if (point.d != -1) {
+          size = 1 + 15000 / (1 + point.d);
+          a = 0.15 - Math.pow(d / 50, 4) * 0.15;
+          if (a > 0) {
+            vars.ctx.fillStyle = colorString(interpolateColors(rgbArray(d / 26 - vars.frameNo / 40), [0, 128, 32], .5 + Math.sin(d / 6 - vars.frameNo / 8) / 2));
+            vars.ctx.globalAlpha = a;
+            vars.ctx.fillRect(point.x - size / 2, point.y - size / 2, size, size);
+          }
+        }
+      }
+    }
+    vars.ctx.fillStyle = "#82f";
+    for (var i = -25; i <= 25; i += 1) {
+      for (var j = -25; j <= 25; j += 1) {
+        x = i * 2;
+        z = j * 2;
+        y = -vars.floor;
+        d = Math.sqrt(x * x + z * z);
+        point = project3D(x, y + d * d / 85, z, vars);
+        if (point.d != -1) {
+          size = 1 + 15000 / (1 + point.d);
+          a = 0.15 - Math.pow(d / 50, 4) * 0.15;
+          if (a > 0) {
+            vars.ctx.fillStyle = colorString(interpolateColors(rgbArray(-d / 26 - vars.frameNo / 40), [32, 0, 128], .5 + Math.sin(-d / 6 - vars.frameNo / 8) / 2));
+            vars.ctx.globalAlpha = a;
+            vars.ctx.fillRect(point.x - size / 2, point.y - size / 2, size, size);
+          }
+        }
+      }
+    }
+  }
+
+  function sortFunction(a, b) {
+    return b.dist - a.dist;
+  }
+
+  function draw(vars) {
+
+    vars.ctx.globalAlpha = .15;
+    vars.ctx.fillStyle = "#000";
+    vars.ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+    drawFloor(vars);
+
+    var point, x, y, z, a;
+    for (var i = 0; i < vars.points.length; ++i) {
+      x = vars.points[i].x;
+      y = vars.points[i].y;
+      z = vars.points[i].z;
+      point = project3D(x, y, z, vars);
+      if (point.d != -1) {
+        vars.points[i].dist = point.d;
+        size = 1 + vars.points[i].radius / (1 + point.d);
+        d = Math.abs(vars.points[i].y);
+        a = .8 - Math.pow(d / (vars.vortexHeight / 2), 1000) * .8;
+        vars.ctx.globalAlpha = a >= 0 && a <= 1 ? a : 0;
+        vars.ctx.fillStyle = rgb(vars.points[i].color);
+        if (point.x > -1 && point.x < vars.canvas.width && point.y > -1 && point.y < vars.canvas.height) vars.ctx.fillRect(point.x - size / 2, point.y - size / 2, size, size);
+      }
+    }
+    vars.points.sort(sortFunction);
+  }
+
+
+  function spawnParticle(vars) {
+
+    var p, ls;
+    pt = {};
+    p = Math.PI * 2 * Math.random();
+    ls = Math.sqrt(Math.random() * vars.distributionRadius);
+    pt.x = Math.sin(p) * ls;
+    pt.y = -vars.vortexHeight / 2;
+    pt.vy = vars.initV / 20 + Math.random() * vars.initV;
+    pt.z = Math.cos(p) * ls;
+    pt.radius = 200 + 800 * Math.random();
+    pt.color = pt.radius / 1000 + vars.frameNo / 250;
+    vars.points.push(pt);
+  }
+
+  function frame(vars) {
+
+    if (vars === undefined) {
+      var vars = {};
+      vars.canvas = document.querySelector("canvas");
+      vars.ctx = vars.canvas.getContext("2d");
+      vars.canvas.width = document.body.clientWidth;
+      vars.canvas.height = document.body.clientHeight;
+      window.addEventListener("resize", function () {
+        vars.canvas.width = document.body.clientWidth;
+        vars.canvas.height = document.body.clientHeight;
+        vars.cx = vars.canvas.width / 2;
+        vars.cy = vars.canvas.height / 2;
+      }, true);
+      vars.frameNo = 0;
+
+      vars.camX = 0;
+      vars.camY = 0;
+      vars.camZ = -14;
+      vars.pitch = elevation(vars.camX, vars.camZ, vars.camY) - Math.PI / 2;
+      vars.yaw = 0;
+      vars.cx = vars.canvas.width / 2;
+      vars.cy = vars.canvas.height / 2;
+      vars.bounding = 10;
+      vars.scale = 500;
+      vars.floor = 26.5;
+
+      vars.points = [];
+      vars.initParticles = 2000;
+      vars.initV = .01;
+      vars.distributionRadius = 800;
+      vars.vortexHeight = 25;
+    }
+
+    vars.frameNo++;
+    requestAnimationFrame(function () {
+      frame(vars);
+    });
+
+    process(vars);
+    draw(vars);
+  }
+  frame();
+</script>
+
+</html>

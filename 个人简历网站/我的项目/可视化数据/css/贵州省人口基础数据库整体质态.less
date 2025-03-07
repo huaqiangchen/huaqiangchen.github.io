@@ -1,0 +1,101 @@
+body {
+    background-color: #001935 !important;
+    .head {
+        background-color: #10315f;
+        height: 30px;
+        border-bottom: 2px solid #528db5;
+        .head-title {
+            text-align: center;
+
+            .title {
+                width: 420px;
+                height: 60px;
+                padding: 10px 0 0;
+                background-color: #10315f;
+                display: inline-block;
+                color: white;
+                font-size: 30px;
+                text-align: center;
+                border-bottom: 2px solid #528db5;
+                position: relative;
+
+                &::before {
+                    content: "";
+                    display: block;
+                    position: absolute;
+                    border-top: 15px solid #10315f;
+                    border-right: 15px solid #10315f;
+                    border-left: 15px solid transparent;
+                    border-bottom: 15px solid transparent;
+                    top: 28px;
+                    left: -30px;
+                }
+
+                &::after {
+                    content: "";
+                    display: block;
+                    position: absolute;
+                    border-top: 15px solid #10315f;
+                    border-left: 15px solid #10315f;
+                    border-right: 15px solid transparent;
+                    border-bottom: 15px solid transparent;
+                    top: 28px;
+                    left: 420px;
+                }
+            }
+        }
+
+    }
+
+    .people {
+        margin-top: 30px;
+        .card {
+            height: 90px;
+            color: #1f8cb3;
+            display: flex;
+            margin-top: 30px;
+
+            .people-num {
+                height: 90px;
+                display: flex;
+                flex-direction: column;
+                margin-left: 30px;
+
+                .num {
+                    color: #a9faef;
+                    font-size: 30px;
+                }
+            }
+        }
+
+    }
+
+    .status {
+        margin-top: 30px;
+        .card {
+            height: 300px;
+            .data-provision {
+                height: 300px;
+            }
+
+            .card-composition {
+                height: 300px;
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+                .composition {
+                    height: 145px;
+                }
+            }
+        }
+    }
+    .statistics{
+        margin-top: 30px;
+        .card{
+            height: 160px;
+            .service {
+                height: 160px;
+            }
+        }
+    }
+}
